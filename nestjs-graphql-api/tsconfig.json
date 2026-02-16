@@ -20,5 +20,10 @@
     "paths": {
       "@generated/prisma": ["./generated/prisma"]
     }
+  },  
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
   }
 }

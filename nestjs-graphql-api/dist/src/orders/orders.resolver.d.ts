@@ -15,44 +15,44 @@ export declare class OrdersResolver {
         };
     } & {
         id: number;
-        paymentMethodId: number | null;
         userId: number;
         status: import("../../generated/prisma/enums").OrderStatus;
         total: number;
+        paymentMethodId: number | null;
     })[]>;
     findMyOrders(user: User): Promise<{
         id: number;
-        paymentMethodId: number | null;
         userId: number;
         status: import("../../generated/prisma/enums").OrderStatus;
         total: number;
+        paymentMethodId: number | null;
     }[]>;
     findOne(id: number): Promise<{
         id: number;
-        paymentMethodId: number | null;
         userId: number;
         status: import("../../generated/prisma/enums").OrderStatus;
         total: number;
+        paymentMethodId: number | null;
     }>;
     createOrder(input: CreateOrderInput): Promise<{
         id: number;
-        paymentMethodId: number | null;
         userId: number;
         status: import("../../generated/prisma/enums").OrderStatus;
         total: number;
+        paymentMethodId: number | null;
     }>;
     cancelOrder(id: number): Promise<{
         id: number;
-        paymentMethodId: number | null;
         userId: number;
         status: import("../../generated/prisma/enums").OrderStatus;
         total: number;
+        paymentMethodId: number | null;
     }>;
     payOrder(id: number, paymentMethodId: number): Promise<{
         id: number;
-        paymentMethodId: number | null;
         userId: number;
         status: import("../../generated/prisma/enums").OrderStatus;
         total: number;
+        paymentMethodId: number | null;
     }>;
 }
