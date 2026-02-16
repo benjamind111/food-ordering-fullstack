@@ -10,7 +10,7 @@ import {
 
 function makeClient() {
   const httpLink = new HttpLink({
-    uri: "http://127.0.0.1:3000/graphql",
+    uri: "https://food-ordering-fullstack.onrender.com/graphql",
   });
 
   return new NextSSRApolloClient({
