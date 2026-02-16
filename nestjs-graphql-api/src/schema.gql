@@ -1,0 +1,85 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""Available countries"""
+enum Country {
+  INDIA
+  USA
+}
+
+input CreateOrderInput {
+  status: OrderStatus = PENDING
+  total: Float!
+  userId: Int!
+}
+
+input CreateUserInput {
+  country: Country!
+  email: String!
+  password: String!
+  role: Role = MEMBER
+}
+
+type Mutation {
+  addPaymentMethod(name: String!): PaymentMethod!
+  cancelOrder(id: Int!): OrderModel!
+  createOrder(input: CreateOrderInput!): OrderModel!
+  createUser(input: CreateUserInput!): UserModel!
+  payOrder(id: Int!, paymentMethodId: Int!): OrderModel!
+  togglePaymentMethod(id: Int!): PaymentMethod!
+  updatePaymentMethod(id: Int!, name: String!): PaymentMethod!
+}
+
+type OrderModel {
+  id: Int!
+  paymentMethodId: Int
+  status: OrderStatus!
+  total: Float!
+  user: UserModel
+  userId: Int!
+}
+
+enum OrderStatus {
+  CANCELLED
+  PAID
+  PENDING
+}
+
+type PaymentMethod {
+  id: Int!
+  isActive: Boolean!
+  name: String!
+}
+
+type Query {
+  myOrders: [OrderModel!]!
+  order(id: Int!): OrderModel
+  orders: [OrderModel!]!
+  paymentMethods: [PaymentMethod!]!
+  restaurant(id: Int!): RestaurantModel
+  restaurants: [RestaurantModel!]!
+  user(id: Int!): UserModel
+  users: [UserModel!]!
+}
+
+type RestaurantModel {
+  country: Country!
+  id: Int!
+  menuItems: [String!]!
+  name: String!
+}
+
+"""User roles"""
+enum Role {
+  ADMIN
+  MANAGER
+  MEMBER
+}
+
+type UserModel {
+  country: Country!
+  email: String!
+  id: Int!
+  role: Role!
+}

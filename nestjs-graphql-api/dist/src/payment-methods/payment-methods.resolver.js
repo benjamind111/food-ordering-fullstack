@@ -1,0 +1,79 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PaymentMethodsResolver = void 0;
+const graphql_1 = require("@nestjs/graphql");
+const payment_methods_service_1 = require("./payment-methods.service");
+const payment_method_model_1 = require("./payment-method.model");
+const common_1 = require("@nestjs/common");
+const roles_guard_1 = require("../auth/roles.guard");
+const roles_decorator_1 = require("../auth/roles.decorator");
+const client_1 = require("../../generated/prisma/client");
+let PaymentMethodsResolver = class PaymentMethodsResolver {
+    constructor(paymentMethodsService) {
+        this.paymentMethodsService = paymentMethodsService;
+    }
+    async paymentMethods() {
+        return this.paymentMethodsService.findAll();
+    }
+    async addPaymentMethod(name) {
+        return this.paymentMethodsService.create(name);
+    }
+    async updatePaymentMethod(id, name) {
+        return this.paymentMethodsService.update(id, name);
+    }
+    async togglePaymentMethod(id) {
+        return this.paymentMethodsService.toggleActive(id);
+    }
+};
+exports.PaymentMethodsResolver = PaymentMethodsResolver;
+__decorate([
+    (0, graphql_1.Query)(() => [payment_method_model_1.PaymentMethod]),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], PaymentMethodsResolver.prototype, "paymentMethods", null);
+__decorate([
+    (0, graphql_1.Mutation)(() => payment_method_model_1.PaymentMethod),
+    (0, common_1.UseGuards)(roles_guard_1.RolesGuard),
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN),
+    __param(0, (0, graphql_1.Args)('name')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], PaymentMethodsResolver.prototype, "addPaymentMethod", null);
+__decorate([
+    (0, graphql_1.Mutation)(() => payment_method_model_1.PaymentMethod),
+    (0, common_1.UseGuards)(roles_guard_1.RolesGuard),
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN),
+    __param(0, (0, graphql_1.Args)('id', { type: () => graphql_1.Int })),
+    __param(1, (0, graphql_1.Args)('name')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, String]),
+    __metadata("design:returntype", Promise)
+], PaymentMethodsResolver.prototype, "updatePaymentMethod", null);
+__decorate([
+    (0, graphql_1.Mutation)(() => payment_method_model_1.PaymentMethod),
+    (0, common_1.UseGuards)(roles_guard_1.RolesGuard),
+    (0, roles_decorator_1.Roles)(client_1.Role.ADMIN),
+    __param(0, (0, graphql_1.Args)('id', { type: () => graphql_1.Int })),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], PaymentMethodsResolver.prototype, "togglePaymentMethod", null);
+exports.PaymentMethodsResolver = PaymentMethodsResolver = __decorate([
+    (0, graphql_1.Resolver)(() => payment_method_model_1.PaymentMethod),
+    __metadata("design:paramtypes", [payment_methods_service_1.PaymentMethodsService])
+], PaymentMethodsResolver);
+//# sourceMappingURL=payment-methods.resolver.js.map

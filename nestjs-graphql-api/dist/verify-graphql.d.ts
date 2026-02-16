@@ -1,0 +1,12 @@
+declare const ENDPOINT = "http://127.0.0.1:3000/graphql";
+declare const GET_RESTAURANTS_QUERY = "\n  query {\n    restaurants {\n      id\n      name\n      country\n    }\n  }\n";
+declare const GET_USERS_QUERY = "\n  query {\n    users {\n      id\n      email\n      role\n      country\n    }\n  }\n";
+declare const CREATE_ORDER_MUTATION = "\n  mutation CreateOrder($input: CreateOrderInput!) {\n    createOrder(input: $input) {\n      id\n      status\n      total\n    }\n  }\n";
+declare const PAY_ORDER_MUTATION = "\n  mutation PayOrder($id: Int!, $paymentMethodId: Int!) {\n    payOrder(id: $id, paymentMethodId: $paymentMethodId) {\n      id\n      status\n    }\n  }\n";
+declare function graphqlRequest(query: string, headers?: Record<string, string>, variables?: Record<string, any>): Promise<any>;
+declare function testIndiaUser(): Promise<void>;
+declare function testUSAUser(): Promise<void>;
+declare function testAdminUser(): Promise<void>;
+declare function testUnauthorizedAccess(): Promise<void>;
+declare function testOrderFlow(): Promise<void>;
+declare function main(): Promise<void>;
