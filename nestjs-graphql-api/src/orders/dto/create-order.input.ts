@@ -1,5 +1,5 @@
 import { InputType, Field, Float, Int } from '@nestjs/graphql';
-import { OrderStatus } from '../../../generated/prisma/client';
+import { OrderStatus } from '../@prisma/client';
 
 @InputType()
 export class CreateOrderInput {

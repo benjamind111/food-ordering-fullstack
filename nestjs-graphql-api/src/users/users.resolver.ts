@@ -5,7 +5,7 @@ import { CreateUserInput } from './dto/create-user.input';
 import { UseGuards } from '@nestjs/common';
 import { RolesGuard } from '../auth/roles.guard';
 import { Roles } from '../auth/roles.decorator';
-import { Role } from '../../generated/prisma/client';
+import { Role } from '@prisma/client';
 
 @Resolver(() => UserModel)
 export class UsersResolver {

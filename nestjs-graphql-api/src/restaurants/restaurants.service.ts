@@ -1,6 +1,6 @@
 import { Injectable, ForbiddenException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
-import { User, Country } from '../../generated/prisma/client';
+import { User, Country } from '@prisma/client';
 
 @Injectable()
 export class RestaurantsService {

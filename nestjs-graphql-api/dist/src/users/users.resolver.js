@@ -18,7 +18,7 @@ const user_model_1 = require("./user.model");
 const users_service_1 = require("./users.service");
 const create_user_input_1 = require("./dto/create-user.input");
 const roles_decorator_1 = require("../auth/roles.decorator");
-const client_1 = require("../../generated/prisma/client");
+const client_1 = require("@prisma/client");
 let UsersResolver = class UsersResolver {
     constructor(usersService) {
         this.usersService = usersService;

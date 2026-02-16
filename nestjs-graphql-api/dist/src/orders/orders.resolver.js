@@ -21,7 +21,7 @@ const current_user_decorator_1 = require("../auth/current-user.decorator");
 const common_1 = require("@nestjs/common");
 const roles_guard_1 = require("../auth/roles.guard");
 const roles_decorator_1 = require("../auth/roles.decorator");
-const client_1 = require("../../generated/prisma/client");
+const client_1 = require("@prisma/client");
 let OrdersResolver = class OrdersResolver {
     constructor(ordersService) {
         this.ordersService = ordersService;

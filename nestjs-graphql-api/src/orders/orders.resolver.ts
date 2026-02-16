@@ -3,12 +3,12 @@ import { OrderModel } from './order.model';
 import { OrdersService } from './orders.service';
 import { CreateOrderInput } from './dto/create-order.input';
 import { CurrentUser } from '../auth/current-user.decorator';
-import { User } from '../../generated/prisma/client';
+import { User } from '@prisma/client';
 
 import { UseGuards } from '@nestjs/common';
 import { RolesGuard } from '../auth/roles.guard';
 import { Roles } from '../auth/roles.decorator';
-import { Role } from '../../generated/prisma/client';
+import { Role } from '@prisma/client';
 
 @Resolver(() => OrderModel)
 export class OrdersResolver {

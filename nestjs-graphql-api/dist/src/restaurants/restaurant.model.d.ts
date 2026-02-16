@@ -1,4 +1,4 @@
-import { Country } from '../../generated/prisma/client';
+import { Country } from '@prisma/client';
 export declare class RestaurantModel {
     id: number;
     name: string;

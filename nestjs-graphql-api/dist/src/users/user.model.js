@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserModel = void 0;
 const graphql_1 = require("@nestjs/graphql");
-const client_1 = require("../../generated/prisma/client");
+const client_1 = require("@prisma/client");
 (0, graphql_1.registerEnumType)(client_1.Role, { name: 'Role', description: 'User roles' });
 (0, graphql_1.registerEnumType)(client_1.Country, { name: 'Country', description: 'Available countries' });
 let UserModel = class UserModel {

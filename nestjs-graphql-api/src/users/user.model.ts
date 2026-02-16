@@ -1,5 +1,5 @@
 import { ObjectType, Field, Int, registerEnumType } from '@nestjs/graphql';
-import { Role, Country } from '../../generated/prisma/client';
+import { Role, Country } from '@prisma/client';
 
 // Register enums with GraphQL
 registerEnumType(Role, { name: 'Role', description: 'User roles' });

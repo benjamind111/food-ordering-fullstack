@@ -19,7 +19,7 @@ const payment_method_model_1 = require("./payment-method.model");
 const common_1 = require("@nestjs/common");
 const roles_guard_1 = require("../auth/roles.guard");
 const roles_decorator_1 = require("../auth/roles.decorator");
-const client_1 = require("../../generated/prisma/client");
+const client_1 = require("@prisma/client");
 let PaymentMethodsResolver = class PaymentMethodsResolver {
     constructor(paymentMethodsService) {
         this.paymentMethodsService = paymentMethodsService;

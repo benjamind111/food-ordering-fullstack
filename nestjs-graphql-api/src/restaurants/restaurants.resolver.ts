@@ -2,7 +2,7 @@ import { Resolver, Query, Args, Int } from '@nestjs/graphql';
 import { RestaurantModel } from './restaurant.model';
 import { RestaurantsService } from './restaurants.service';
 import { CurrentUser } from '../auth/current-user.decorator';
-import { User } from '../../generated/prisma/client';
+import { User } from '@prisma/client';
 
 @Resolver(() => RestaurantModel)
 export class RestaurantsResolver {

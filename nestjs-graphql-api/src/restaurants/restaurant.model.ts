@@ -1,5 +1,5 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
-import { Country } from '../../generated/prisma/client';
+import { Country } from '@prisma/client';
 
 @ObjectType()
 export class RestaurantModel {

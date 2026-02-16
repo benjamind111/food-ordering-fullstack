@@ -1,7 +1,7 @@
 import { OrdersService } from './orders.service';
 import { CreateOrderInput } from './dto/create-order.input';
-import { User } from '../../generated/prisma/client';
-import { Role } from '../../generated/prisma/client';
+import { User } from '@prisma/client';
+import { Role } from '@prisma/client';
 export declare class OrdersResolver {
     private readonly ordersService;
     constructor(ordersService: OrdersService);

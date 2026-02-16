@@ -1,5 +1,5 @@
 import { RestaurantsService } from './restaurants.service';
-import { User } from '../../generated/prisma/client';
+import { User } from '@prisma/client';
 export declare class RestaurantsResolver {
     private readonly restaurantsService;
     constructor(restaurantsService: RestaurantsService);

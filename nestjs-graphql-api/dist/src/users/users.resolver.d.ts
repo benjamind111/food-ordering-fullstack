@@ -1,6 +1,6 @@
 import { UsersService } from './users.service';
 import { CreateUserInput } from './dto/create-user.input';
-import { Role } from '../../generated/prisma/client';
+import { Role } from '@prisma/client';
 export declare class UsersResolver {
     private readonly usersService;
     constructor(usersService: UsersService);

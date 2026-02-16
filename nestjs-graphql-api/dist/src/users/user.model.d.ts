@@ -1,4 +1,4 @@
-import { Role, Country } from '../../generated/prisma/client';
+import { Role, Country } from '@prisma/client';
 export declare class UserModel {
     id: number;
     email: string;
