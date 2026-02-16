@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateOrderInput = void 0;
 const graphql_1 = require("@nestjs/graphql");
-const client_1 = require("../@prisma/client");
+const client_1 = require("@prisma/client");
 let CreateOrderInput = class CreateOrderInput {
 };
 exports.CreateOrderInput = CreateOrderInput;
